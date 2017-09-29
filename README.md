@@ -24,6 +24,8 @@ Please include clear instructions on how to use the software you create.
 This includes things like calling out what dependencies are required to run the software.
 Instructions or scripts on setting up the development environment.
 Explanation of the any relevant software architecture decisions.
+[Here](https://github.com/iharsh234/WebApp) is an example of a good readme.
+
 Also note this is pretty open ended question.
 There aren't any right or wrong answers.
 Tuesday Strategies would just like to see how you would solve a problem similar to problems you might encounter in your day to day work.
@@ -31,5 +33,15 @@ Please don't feel that you need to spend more than a few hours on this.
 You should focus your time on what you think is most interesting.
 If you like the frontend then make a pretty frontend.
 If you like the backend then focus on the backend.
+
 Please do make it so that anyone can use the software (no terminal only applications).
+
 Finally have fun with the question and add whatever you would like and show us some creativity.
+
+
+## Checklist for submission:
+
+- [ ] README.md with instructions on how to run the app
+- [ ] README.md with links to various key dependency documentation
+- [ ] README.md with description of high level architecture
+- [ ] Verify that if you pull your repository and follow the instructions in the README.md that the application works as expected.
