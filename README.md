@@ -1,4 +1,4 @@
-# software-challenge-0
+# Karen volunteer app challenge
 
 
 Hi! I’m Karen and I’m running for office in the great state of MI. I’d really like your help. I need a way to have my volunteers sign up to help me out.
