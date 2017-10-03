@@ -48,6 +48,8 @@ class Instruction {
         return num * -1;
       case "sum":
         return this.sumNumber(num);
+      case "reverse":
+        return Number(String(num).split("").reverse().join(""));
       default:
         return this.hybridOperation(num);
     }
@@ -83,7 +85,7 @@ class Instruction {
 
     } else if (this.instruction.includes("replace")) {
       const replace = this.instruction.split("replace")[1].split("=>");
-      const stringNum = String(num).replace(replace[0], replace[1]);
+      const stringNum = String(num).replaceAll(replace[0], replace[1]);
       return Number(stringNum);
 
     } else if (this.instruction.includes("insert")) {
@@ -100,6 +102,11 @@ class Instruction {
     }
   }
 }
+
+String.prototype.replaceAll = function(search, replacement) {
+  const target = this;
+  return target.split(search).join(replacement);
+};
 
 class CalculatorGame {
   constructor(start, goal, moves, instructions) {
@@ -151,12 +158,16 @@ const shiftLeft = "shift<";
 const shiftRight = "shift>";
 const negate = "negate";
 const sum = "sum";
+const reverse = "reverse";
+const replace = (n1, n2) => {
+  return `replace${n1}=>${n2}`;
+};
 
 
-const start = 212;
-const goal = 3;
-const moves = 4;
-const instruction = [shiftLeft, "+11", "replace3=>1", sum];
+const start = 2152;
+const goal = 13;
+const moves = 6;
+const instruction = [replace(25, 12), replace(21, 3), replace(12, 5), shiftRight, reverse];
 
 const game = new CalculatorGame(start, goal, moves, instruction);
 console.log(game.findSolution());
