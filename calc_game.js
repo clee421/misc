@@ -62,6 +62,8 @@ class Instruction {
     return sum;
   }
 
+  shiftLeft(num) {}
+
   hybridOperation(num) {
     if (this.instruction.includes("power")) {
       const power = Number(this.instruction.split("power")[1]);
@@ -71,6 +73,11 @@ class Instruction {
       const replace = this.instruction.split("replace")[1].split("=>");
       const stringNum = String(num).replace(replace[0], replace[1]);
       return Number(stringNum);
+
+    } else if (this.instruction.includes("insert")) {
+      const insert = this.instruction.split("insert")[1];
+      const stringNum = String(num);
+      return Number(stringNum + insert);
 
     } else {
       return num;
@@ -124,5 +131,5 @@ class CalculatorGame {
 }
 
 // constructor(start, goal, moves, instructions)
-const game = new CalculatorGame(36, 11, 6, ["+3", "power3", "repalce0=>1", "sum"]);
+const game = new CalculatorGame(2, 11, 5, ["x2", "insert10", "sum", "power3", "replace10=>1"]);
 console.log(game.findSolution());
