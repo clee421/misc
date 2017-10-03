@@ -64,8 +64,13 @@ class Instruction {
 
   hybridOperation(num) {
     if (this.instruction.includes("power")) {
-      
+      const power = Number(this.instruction.split("power")[1]);
+      return Math.pow(num, power);
+
     } else if (this.instruction.includes("replace")) {
+      const replace = this.instruction.split("replace")[1].split("=>");
+      const stringNum = String(num).replace(replace[0], replace[1]);
+      return Number(stringNum);
 
     } else {
       return num;
