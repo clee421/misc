@@ -62,7 +62,19 @@ class Instruction {
     return sum;
   }
 
-  shiftLeft(num) {}
+  shiftLeft(num) {
+    const strNum = String(num);
+    const first = strNum[0];
+    const rest = strNum.slice(1);
+    return Number(rest + first);
+  }
+
+  shiftRight(num) {
+    const strNum = String(num);
+    const last = strNum[strNum.length - 1];
+    const rest = strNum.slice(0, strNum.length - 1);
+    return Number(last + rest);
+  }
 
   hybridOperation(num) {
     if (this.instruction.includes("power")) {
@@ -78,6 +90,10 @@ class Instruction {
       const insert = this.instruction.split("insert")[1];
       const stringNum = String(num);
       return Number(stringNum + insert);
+
+    } else if (this.instruction.includes("shift")) {
+      const shift = this.instruction.split("shift")[1];
+      return (shift === "<") ? this.shiftLeft(num) : this.shiftRight(num);
 
     } else {
       return num;
@@ -131,5 +147,5 @@ class CalculatorGame {
 }
 
 // constructor(start, goal, moves, instructions)
-const game = new CalculatorGame(2, 11, 5, ["x2", "insert10", "sum", "power3", "replace10=>1"]);
+const game = new CalculatorGame(123, 312, 1, ["shift>"]);
 console.log(game.findSolution());
