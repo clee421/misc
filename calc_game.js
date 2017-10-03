@@ -147,5 +147,16 @@ class CalculatorGame {
 }
 
 // constructor(start, goal, moves, instructions)
-const game = new CalculatorGame(123, 312, 1, ["shift>"]);
+const shiftLeft = "shift<";
+const shiftRight = "shift>";
+const negate = "negate";
+const sum = "sum";
+
+
+const start = 212;
+const goal = 3;
+const moves = 4;
+const instruction = [shiftLeft, "+11", "replace3=>1", sum];
+
+const game = new CalculatorGame(start, goal, moves, instruction);
 console.log(game.findSolution());
