@@ -11,6 +11,40 @@ class Instruction {
   constructor(string) {
     this.instruction = string;
   }
+
+  applyInstruction(num) {
+    const lead = this.instruction[0];
+    let instNum = Number(this.instruction.slice(1));
+    switch(lead) {
+      case "+":
+      case "-":
+      case "/":
+      case "x":
+        return this.applyOperation(lead, num, instNum);
+
+      default:
+        return this.specialInstruction(num);
+    }
+  }
+
+  applyOperation(op, numOne, numTwo) {
+    switch(op) {
+      case "+":
+        return numOne + numTwo;
+      case "-":
+        return numOne - numTwo;
+      case "x":
+        return numOne * numTwo;
+      case "/":
+        return numOne / numTwo;
+      default:
+        return numOne;
+    }
+  }
+
+  specialInstruction(num) {
+    return num;
+  }
 }
 
 class CalculatorGame {
@@ -20,7 +54,15 @@ class CalculatorGame {
     this.moves = moves;
     this.instructions = instructions.map( inst => new Instruction(inst));
   }
+
+  checkSolution(instructions) {
+    let total = this.start;
+    instructions.forEach( (instruction) => {
+      total = instruction.applyInstruction(total);
+    });
+    return total === this.goal;
+  }
 }
 
 const game = new CalculatorGame(0, 5, 2, ["+10", "/2"]);
-console.log(game);
+console.log(game.checkSolution(game.instructions));
