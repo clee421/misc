@@ -43,7 +43,33 @@ class Instruction {
   }
 
   specialInstruction(num) {
-    return num;
+    switch(this.instruction) {
+      case "negate":
+        return num * -1;
+      case "sum":
+        return this.sumNumber(num);
+      default:
+        return this.hybridOperation(num);
+    }
+  }
+
+  sumNumber(num) {
+    let sum = 0;
+    const stringNum = String(num);
+    for (let i = 0; i < stringNum.length; i++) {
+      sum += Number(stringNum[i]);
+    }
+    return sum;
+  }
+
+  hybridOperation(num) {
+    if (this.instruction.includes("power")) {
+      
+    } else if (this.instruction.includes("replace")) {
+
+    } else {
+      return num;
+    }
   }
 }
 
@@ -52,17 +78,46 @@ class CalculatorGame {
     this.start = start;
     this.goal = goal;
     this.moves = moves;
-    this.instructions = instructions.map( inst => new Instruction(inst));
+    this.instructions = instructions;
   }
 
   checkSolution(instructions) {
     let total = this.start;
     instructions.forEach( (instruction) => {
+      instruction = new Instruction(instruction);
       total = instruction.applyInstruction(total);
     });
     return total === this.goal;
   }
+
+  buildAllSolutions(moves = this.moves, instructions = this.instructions) {
+    if (moves < 1) return [];
+    if (moves === 1) {
+      return instructions.map( inst => [inst]);
+    }
+
+    const prevSolutions = this.buildAllSolutions(moves - 1, instructions);
+    const allSolutions = [];
+    instructions.forEach( currentInst => {
+      prevSolutions.forEach( prevInst => {
+        allSolutions.push([currentInst, ...prevInst]);
+      });
+    });
+
+    return allSolutions;
+  }
+
+  findSolution() {
+    const allSolutions = this.buildAllSolutions();
+    for (let i = 0; i < allSolutions.length; i++) {
+      if (this.checkSolution(allSolutions[i])) {
+        return allSolutions[i];
+      }
+    }
+    return [];
+  }
 }
 
-const game = new CalculatorGame(0, 5, 2, ["+10", "/2"]);
-console.log(game.checkSolution(game.instructions));
+// constructor(start, goal, moves, instructions)
+const game = new CalculatorGame(36, 11, 6, ["+3", "power3", "repalce0=>1", "sum"]);
+console.log(game.findSolution());
