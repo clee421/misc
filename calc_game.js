@@ -49,7 +49,13 @@ class Instruction {
       case "sum":
         return this.sumNumber(num);
       case "reverse":
-        return Number(String(num).split("").reverse().join(""));
+        return this.reverse(num);
+      case "mirror":
+        return this.mirror(num);
+      case "<<":
+        return this.removeRight(num);
+      case ">>":
+        return this.removeLeft(num);
       default:
         return this.hybridOperation(num);
     }
@@ -76,6 +82,25 @@ class Instruction {
     const last = strNum[strNum.length - 1];
     const rest = strNum.slice(0, strNum.length - 1);
     return Number(last + rest);
+  }
+
+  reverse(num) {
+    return Number(String(num).split("").reverse().join(""));
+  }
+
+  mirror(num) {
+    const str = String(num) + String(this.reverse(num));
+    return Number(str);
+  }
+
+  removeRight(num) {
+    const strNum = String(num);
+    return Number(strNum.slice(0, strNum.length - 1));
+  }
+
+  removeLeft(num) {
+    const strNum = String(num);
+    return Number(strNum.slice(1));
   }
 
   hybridOperation(num) {
@@ -118,10 +143,11 @@ class CalculatorGame {
 
   checkSolution(instructions) {
     let total = this.start;
-    instructions.forEach( (instruction) => {
-      instruction = new Instruction(instruction);
+    for (let i = 0; i < instructions.length; i++) {
+      let instruction = new Instruction(instructions[i]);
       total = instruction.applyInstruction(total);
-    });
+      if (String(total).length > 6) return false;
+    }
     return total === this.goal;
   }
 
@@ -156,18 +182,24 @@ class CalculatorGame {
 // constructor(start, goal, moves, instructions)
 const shiftLeft = "shift<";
 const shiftRight = "shift>";
+const removeLeft = ">>";
+const removeRight = "<<";
 const negate = "negate";
 const sum = "sum";
 const reverse = "reverse";
+const mirror = "mirror";
 const replace = (n1, n2) => {
   return `replace${n1}=>${n2}`;
 };
+const insert = n => {
+  return `insert${n}`;
+};
 
 
-const start = 2152;
-const goal = 13;
-const moves = 6;
-const instruction = [replace(25, 12), replace(21, 3), replace(12, 5), shiftRight, reverse];
+const start = 322;
+const goal = 22;
+const moves = 1;
+const instruction = [removeLeft];
 
 const game = new CalculatorGame(start, goal, moves, instruction);
 console.log(game.findSolution());
