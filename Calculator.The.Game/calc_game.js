@@ -198,10 +198,10 @@ const insert = n => {
 };
 
 
-const start = -1;
-const goal = 2020;
+const start = 125;
+const goal = 20;
 const moves = 8;
-const instruction = ["x3", "+8", "+2", reverse, mirror];
+const instruction = [mirror, sum];
 
 const game = new CalculatorGame(start, goal, moves, instruction);
 console.log(game.findSolution());
