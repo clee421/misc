@@ -89,7 +89,7 @@ class Instruction {
   }
 
   mirror(num) {
-    const str = String(num) + String(this.reverse(num));
+    const str = String(num) + String(num).split("").reverse().join("");
     return Number(str);
   }
 
@@ -143,9 +143,11 @@ class CalculatorGame {
 
   checkSolution(instructions) {
     let total = this.start;
+    // console.log(total);
     for (let i = 0; i < instructions.length; i++) {
       let instruction = new Instruction(instructions[i]);
       total = instruction.applyInstruction(total);
+      // console.log(total);
       if (String(total).length > 6) return false;
     }
     return total === this.goal;
@@ -196,10 +198,10 @@ const insert = n => {
 };
 
 
-const start = 322;
-const goal = 22;
-const moves = 1;
-const instruction = [removeLeft];
+const start = -1;
+const goal = 2020;
+const moves = 8;
+const instruction = ["x3", "+8", "+2", reverse, mirror];
 
 const game = new CalculatorGame(start, goal, moves, instruction);
 console.log(game.findSolution());
