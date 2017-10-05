@@ -8,6 +8,14 @@ Can you help me with that?
 
 Note you can do this either in Python, Java, Javascript, or Golang.
 
+## Instructions for submission
+
+1.  Fork the repository.
+1.  Make a bunch of small commits.
+1.  Make sure your code satisfies the checklist
+1.  Make sure to add charltonaustin as a collaborator to your repository.
+1.  Send an email with a link to your repository to your main contact.
+
 ## FAQ
 
 Q: What database/schema should I use?
@@ -31,8 +39,8 @@ There aren't any right or wrong answers.
 Tuesday Strategies would just like to see how you would solve a problem similar to problems you might encounter in your day to day work.
 Please don't feel that you need to spend more than a few hours on this.
 You should focus your time on what you think is most interesting.
-If you like the frontend then make a pretty frontend.
-If you like the backend then focus on the backend.
+If you like the front-end then make a pretty front-end.
+If you like the back-end then focus on the back-end.
 
 Please do make it so that anyone can use the software (no terminal only applications).
 
