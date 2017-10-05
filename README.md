@@ -11,7 +11,7 @@ Note you can do this either in Python, Java, Javascript, or Golang.
 ## Instructions for submission
 
 1.  Fork the repository.
-1.  Make a bunch of small commits.
+1.  Make a bunch of small commits directly to master.
 1.  Make sure your code satisfies the checklist
 1.  Make sure to add charltonaustin as a collaborator to your repository.
 1.  Send an email with a link to your repository to your main contact.
