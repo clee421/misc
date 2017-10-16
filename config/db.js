@@ -1,0 +1,3 @@
+module.exports = {
+  url: 'mongodb://tuesday_admin:challenge_1016@ds121495.mlab.com:21495/tuesday_campaign'
+};
