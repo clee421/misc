@@ -1,0 +1,24 @@
+[
+  {
+    "candidate": "Karen",
+    "state": "MI",
+    "volunteers": [
+      {
+        "firstName":  "Jane",
+        "lastname":   "Doe",
+        "middleName": "J",
+        "dob":        "10/16/1998",
+        "interests":  "Slow walks on the beach"
+
+      },
+      {
+        "firstName":  "John",
+        "lastname":   "Doe",
+        "middleName": "J",
+        "dob":        "10/16/1996",
+        "interests":  "Watching scary movies"
+
+      }
+    ]
+  }
+]
