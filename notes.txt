@@ -1,3 +1,8 @@
+*Instructions for seeding DB*
+https://github.com/toymachiner62/node-mongo-seeds
+
+________________________
+
 Hi! I’m Karen and I’m running for office in the great state of MI.
 
 State: MI
