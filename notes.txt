@@ -1,0 +1,27 @@
+Hi! I’m Karen and I’m running for office in the great state of MI.
+
+State: MI
+
+I’d really like your help. 
+I need a way to have my volunteers sign up to help me out. 
+In particular I need them to be able to give me their first name, last name, middle initial, and date of birth. 
+I also need to know what they are interested in.
+
+Volunteers:
+  First Name,
+  Last Name,
+  Middle Initial,
+  Date of Birth,
+  Interests
+
+ Then I need to match them with the voter data that I have. 
+ The format of the voter data will be name, age, location, phone number, and date last contacted.
+ 
+ Voter:
+  Name,
+  Age,
+  Location,
+  Phone Number,
+  Date (last contacted)
+ 
+ Can you help me with that?
