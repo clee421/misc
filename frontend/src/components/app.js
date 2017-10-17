@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+
+import Campaign from './campaign';
+import Volunteer from './volunteer';
+import Voter from './voter';
+
 import logo from '../logo.svg';
 import '../css/app.css';
 
@@ -10,9 +15,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/app.js</code> and save to reload.
-        </p>
+        <Campaign />
+        <Volunteer />
+        <Voter />
       </div>
     );
   }
