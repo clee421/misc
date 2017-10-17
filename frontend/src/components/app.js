@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Campaign from './campaign';
+import CampaignsList from './campaigns/campaigns_list';
 import Volunteer from './volunteer';
 import Voter from './voter';
 
@@ -15,7 +15,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <Campaign />
+        <CampaignsList />
         <Volunteer />
         <Voter />
       </div>
