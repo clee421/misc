@@ -13,7 +13,7 @@ class CampaignsList extends React.Component {
 
   render() {
     const campaignList = this.props.campaigns.map( campaign => {
-      return <Campaign campaig={campaign} key={campaign.id} />
+      return <Campaign campaig={campaign} key={campaign._id} />;
     });
     return (
       <section>
@@ -25,9 +25,9 @@ class CampaignsList extends React.Component {
 
 ////////// CONTAINER //////////
 const mapStateToProps = ({ campaigns }) => {
-  const campaignList = Object.keys(campaigns).map( campId => (
-    campaigns[campId]
-  ));
+  const campaignList = Object.keys(campaigns).map( campId => {
+    return campaigns[campId];
+  });
   return {
     campaigns: campaignList
   };

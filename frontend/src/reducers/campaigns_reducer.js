@@ -9,7 +9,7 @@ const CampaignReducer = (state = {}, action) => {
     case RECEIVE_CAMPAIGNS:
       const campaigns = {};
       action.campaigns.forEach( campaign => {
-        campaigns[campaign.id] = campaign;
+        campaigns[campaign._id] = campaign;
       });
 
       return merge(currentState, campaigns);
