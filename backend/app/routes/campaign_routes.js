@@ -9,7 +9,7 @@ const campaignParams = (req) => {
 };
 
 module.exports = function(app, db) {
-  app.get('/campaigns', (req, res) => {
+  app.get('/api/campaigns', (req, res) => {
     db.collection('campaigns').find({}, (err, campaignCursor) => {
       if (err) {
         res.send({'error':'An error has occurred'});
@@ -26,7 +26,7 @@ module.exports = function(app, db) {
     });
   });
 
-  app.get('/campaigns/:id', (req, res) => {
+  app.get('/api/campaigns/:id', (req, res) => {
     const id = req.params.id;
     const details = { '_id': new ObjectID(id) };
     db.collection('campaigns').findOne(details, (err, item) => {
@@ -38,7 +38,7 @@ module.exports = function(app, db) {
     });
   });
 
-  app.post('/campaigns', (req, res) => {
+  app.post('/api/campaigns', (req, res) => {
     const voter = campaignParams(req);
     db.collection('campaigns').insert(voter, (err, result) => {
       if (err) { 
@@ -49,7 +49,7 @@ module.exports = function(app, db) {
     });
   });
 
-  app.delete('/campaigns/:id', (req, res) => {
+  app.delete('/api/campaigns/:id', (req, res) => {
     const id = req.params.id;
     const details = { '_id': new ObjectID(id) };
     db.collection('campaigns').remove(details, (err, item) => {
@@ -61,7 +61,7 @@ module.exports = function(app, db) {
     });
   });
 
-  app.put('/campaigns/:id', (req, res) => {
+  app.put('/api/campaigns/:id', (req, res) => {
     const id = req.params.id;
     const details = { '_id': new ObjectID(id) };
     const voter = campaignParams(req);
