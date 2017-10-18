@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
+import HeaderNav from './layout/header';
+import PageContent from './layout/page_content';
 
-import CampaignsList from './campaigns/campaigns_list';
-import Volunteer from './volunteer';
-import Voter from './voter';
-
-import logo from '../logo.svg';
+import 'semantic-ui-css/semantic.min.css';  
 import '../css/app.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <CampaignsList />
-        <Volunteer />
-        <Voter />
+        <HeaderNav />
+        <PageContent /> 
       </div>
     );
   }

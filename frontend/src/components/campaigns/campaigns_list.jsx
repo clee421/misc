@@ -13,7 +13,7 @@ class CampaignsList extends React.Component {
 
   render() {
     const campaignList = this.props.campaigns.map( campaign => {
-      return <Campaign campaig={campaign} key={campaign._id} />;
+      return <Campaign campaign={campaign} key={campaign._id} />;
     });
     return (
       <section>
