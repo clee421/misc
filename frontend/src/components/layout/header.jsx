@@ -20,27 +20,19 @@ export default class HeaderMenu extends React.Component {
     return (
       <Menu>
         <Menu.Item
-          name='editorials'
-          active={activeItem === 'editorials'}
+          name='campaigns'
+          active={activeItem === 'campaigns'}
           onClick={this.handleItemClick}
         >
-          Editorials
+          Campaigns
         </Menu.Item>
 
         <Menu.Item
-          name='reviews'
-          active={activeItem === 'reviews'}
+          name='voters'
+          active={activeItem === 'voters'}
           onClick={this.handleItemClick}
         >
-          Reviews
-        </Menu.Item>
-
-        <Menu.Item
-          name='upcomingEvents'
-          active={activeItem === 'upcomingEvents'}
-          onClick={this.handleItemClick}
-        >
-          Upcoming Events
+          Voters
         </Menu.Item>
       </Menu>
     );
