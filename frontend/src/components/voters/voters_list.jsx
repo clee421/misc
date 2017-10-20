@@ -1,5 +1,6 @@
 import React from 'react';
 import Voter from './voter';
+import { Grid } from 'semantic-ui-react';
 
 ////////// CONTAINER //////////
 import { connect } from 'react-redux';
@@ -16,9 +17,13 @@ class VotersList extends React.Component {
       return <Voter voter={voter} key={voter._id} />;
     });
     return (
-      <section>
-        {voterList}
-      </section>
+      <Grid container>
+        <Grid.Row>
+          <Grid.Column width={12}>
+            {voterList}
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     );
   }
 }
