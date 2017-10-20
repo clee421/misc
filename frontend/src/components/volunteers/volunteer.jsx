@@ -1,15 +1,16 @@
 import React from 'react';
+import { Card } from 'semantic-ui-react';
 
 class Volunteer extends React.Component {
 
   render() {
     let { volunteer } = this.props;
     return (
-      <div>
-        <p>{`Name: ${volunteer.firstName} ${volunteer.middleName}. ${volunteer.lastName}`}</p>
-        <p>{`DOB: ${volunteer.dob}`}</p>
-        <p>{`Interests: ${volunteer.interests}`}</p>
-      </div>
+      <Card
+        header={`${volunteer.firstName} ${volunteer.middleName}. ${volunteer.lastName}`}
+        meta={`Date of birth: ${volunteer.dob}`}
+        description={volunteer.interests}
+      />
     );
   }
 }

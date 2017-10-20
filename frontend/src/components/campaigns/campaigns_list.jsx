@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid } from 'semantic-ui-react';
 import Campaign from './campaign';
 
 ////////// CONTAINER //////////
@@ -16,9 +17,9 @@ class CampaignsList extends React.Component {
       return <Campaign campaign={campaign} key={campaign._id} />;
     });
     return (
-      <section>
+      <Grid container>
         {campaignList}
-      </section>
+      </Grid>
     );
   }
 }
