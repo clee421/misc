@@ -3,6 +3,8 @@ import { Grid, Card, Image, Icon } from 'semantic-ui-react';
 import Volunteer from '../volunteers/volunteer';
 import DefaultImage from '../../assets/images/default.jpg';
 
+import '../../css/campaign.css';
+
 class Campaign extends React.Component {
 
   render() {
@@ -11,7 +13,7 @@ class Campaign extends React.Component {
     ));
 
     return (
-      <Grid.Row>
+      <Grid.Row className="campaign">
         <Grid.Column width={6}>
           <Card>
           <Image src={DefaultImage} />

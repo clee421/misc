@@ -20,5 +20,27 @@
 
       }
     ]
+  },
+  {
+    "candidate": "Tim",
+    "state": "CA",
+    "volunteers": [
+      {
+        "firstName":  "Jane",
+        "lastName":   "Doe",
+        "middleName": "J",
+        "dob":        "10/16/1998",
+        "interests":  "Slow walks on the beach"
+
+      },
+      {
+        "firstName":  "John",
+        "lastName":   "Doe",
+        "middleName": "J",
+        "dob":        "10/16/1996",
+        "interests":  "Watching scary movies"
+
+      }
+    ]
   }
 ]
