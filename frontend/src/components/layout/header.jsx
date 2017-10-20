@@ -1,35 +1,43 @@
 import React from 'react';
-import { Menu } from 'semantic-ui-react';
+import { Menu, Icon } from 'semantic-ui-react';
+import { withRouter } from 'react-router-dom';
 
-export default class HeaderMenu extends React.Component {
+class HeaderMenu extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {};
     
     this.handleItemClick = this.handleItemClick.bind(this);
   }
 
-  handleItemClick(e, { name }) {
-    this.setState({ activeItem: name });
+  handleItemClick(e, node) {
+    
+    if (this.props.location.pathname !== node['data-path']) {
+      this.props.history.push(node['data-path']);
+    }
   }
 
   render() {
-    const { activeItem } = this.state;
-
     return (
       <Menu>
         <Menu.Item
-          name='campaigns'
-          active={activeItem === 'campaigns'}
+          data-path='/'
+          active={this.props.location.pathname === '/'}
+          onClick={this.handleItemClick}
+        >
+          <Icon name='home' size='large' />
+        </Menu.Item>
+
+        <Menu.Item
+          data-path='/campaigns'
+          active={this.props.location.pathname === '/campaigns'}
           onClick={this.handleItemClick}
         >
           Campaigns
         </Menu.Item>
 
         <Menu.Item
-          name='voters'
-          active={activeItem === 'voters'}
+          data-path='/voters'
+          active={this.props.location.pathname === '/voters'}
           onClick={this.handleItemClick}
         >
           Voters
@@ -38,3 +46,5 @@ export default class HeaderMenu extends React.Component {
     );
   }
 }
+
+export default withRouter(HeaderMenu);
