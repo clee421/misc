@@ -8,7 +8,10 @@
         "lastName":   "Doe",
         "middleName": "J",
         "dob":        "10/16/1998",
-        "interests":  "Slow walks on the beach"
+        "interests":  [
+          "healthcare",
+          "immigration"
+        ]
 
       },
       {
@@ -16,7 +19,10 @@
         "lastName":   "Doe",
         "middleName": "J",
         "dob":        "10/16/1996",
-        "interests":  "Watching scary movies"
+        "interests":  [
+          "environment",
+          "guns"
+        ]
 
       }
     ]
@@ -26,20 +32,25 @@
     "state": "CA",
     "volunteers": [
       {
-        "firstName":  "Jane",
-        "lastName":   "Doe",
-        "middleName": "J",
-        "dob":        "10/16/1998",
-        "interests":  "Slow walks on the beach"
+        "firstName":  "Alex",
+        "lastName":   "Huang",
+        "middleName": "P",
+        "dob":        "04/26/1995",
+        "interests":  [
+          "economy",
+          "terrorism"
+        ]
 
       },
       {
-        "firstName":  "John",
-        "lastName":   "Doe",
-        "middleName": "J",
-        "dob":        "10/16/1996",
-        "interests":  "Watching scary movies"
-
+        "firstName":  "Joanna",
+        "lastName":   "Caldwell",
+        "middleName": "T",
+        "dob":        "08/05/1995",
+        "interests":  [
+          "federal budget",
+          "income equality"
+        ]
       }
     ]
   }

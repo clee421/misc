@@ -9,7 +9,7 @@ class Volunteer extends React.Component {
       <Card
         header={`${volunteer.firstName} ${volunteer.middleName}. ${volunteer.lastName}`}
         meta={`Date of birth: ${volunteer.dob}`}
-        description={volunteer.interests}
+        description={volunteer.interests.join(', ')}
       />
     );
   }

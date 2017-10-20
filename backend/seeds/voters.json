@@ -4,13 +4,25 @@
     "age":          23,
     "location":     "159 West 25th Street, New York, NY 10025",
     "phone":        "123-456-789",
-    "lastContact":  "10/16/2017"
+    "lastContact":  "10/16/2017",
+    "issues":       [
+      "healthcare",
+      "immigration",
+      "environment",
+      "guns"
+    ]
   },
   {
     "name":         "Stephanie Johnson",
     "age":          27,
     "location":     "598 Broadway, New York, NY 10013",
     "phone":        "456-123-789",
-    "lastContact":  "10/10/2017"
+    "lastContact":  "10/10/2017",
+    "issues":       [
+      "economy",
+      "terrorism",
+      "federal budget",
+      "income equality"
+    ]
   }
 ]
