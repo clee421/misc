@@ -24,5 +24,32 @@
       "federal budget",
       "income equality"
     ]
+  },
+  {
+    "name":         "Sara Diantha",
+    "age":          40,
+    "location":     "598 Broadway, New York, NY 10013",
+    "phone":        "456-123-789",
+    "lastContact":  "10/10/2017",
+    "issues":       [
+      "healthcare",
+      "terrorism",
+      "environment",
+      "income equality"
+    ]
+  },
+  {
+    "name":         "Robert Camilo",
+    "age":          35,
+    "location":     "598 Broadway, New York, NY 10013",
+    "phone":        "456-123-789",
+    "lastContact":  "10/10/2017",
+    "issues":       [
+      "healthcare",
+      "terrorism",
+      "environment",
+      "income equality",
+      "guns"
+    ]
   }
 ]
