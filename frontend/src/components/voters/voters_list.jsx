@@ -13,16 +13,45 @@ class VotersList extends React.Component {
   }
 
   render() {
-    const voterList = this.props.voters.map( voter => {
-      return <Voter voter={voter} key={voter._id} />;
-    });
+    const { voters } = this.props;
+    const numColumns = 3;
+
+    let columnCount = 0;
+    let voterRow = [];
+    const voterList = [];
+    for (let i = 0; i < voters.length; i++) {
+      if (columnCount >= numColumns) {
+        voterList.push(
+          <Grid.Row columns={numColumns} key={voterList.length} >
+            {voterRow}
+          </Grid.Row>
+        );
+        voterRow = [];
+        columnCount = 0;
+      }
+
+      if (columnCount < numColumns) {
+        voterRow.push(
+          <Grid.Column key={voters[i]._id} >
+            <Voter voter={voters[i]} />
+          </Grid.Column>
+        );
+        columnCount++;
+      }
+    }
+
+    // If there is anything left inside voterRow
+    if (voterRow.length > 0) {
+      voterList.push(
+        <Grid.Row columns={numColumns} key={voterList.length} >
+          {voterRow}
+        </Grid.Row>
+      );
+    }
+
     return (
       <Grid container>
-        <Grid.Row>
-          <Grid.Column width={12}>
-            {voterList}
-          </Grid.Column>
-        </Grid.Row>
+        {voterList}
       </Grid>
     );
   }
