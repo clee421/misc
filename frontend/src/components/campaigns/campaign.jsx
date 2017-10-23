@@ -9,8 +9,8 @@ import '../../css/campaign.css';
 class Campaign extends React.Component {
 
   render() {
-    const volunteerList = this.props.campaign.volunteers.map( (v, idx) => (
-      <Volunteer volunteer={v} key={idx} />
+    const volunteerList = this.props.campaign.volunteers.map( v => (
+      <Volunteer volunteer={v} key={v.id} />
     ));
 
     return (
