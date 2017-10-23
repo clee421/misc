@@ -1,5 +1,6 @@
 [
   {
+    "id":           1,
     "name":         "Steve Johnson",
     "age":          23,
     "location":     "159 West 25th Street, New York, NY 10025",
@@ -13,6 +14,7 @@
     ]
   },
   {
+    "id":           2,
     "name":         "Stephanie Johnson",
     "age":          27,
     "location":     "598 Broadway, New York, NY 10013",
@@ -26,6 +28,7 @@
     ]
   },
   {
+    "id":           3,
     "name":         "Sara Diantha",
     "age":          40,
     "location":     "598 Broadway, New York, NY 10013",
@@ -39,6 +42,7 @@
     ]
   },
   {
+    "id":           4,
     "name":         "Robert Camilo",
     "age":          35,
     "location":     "598 Broadway, New York, NY 10013",
@@ -49,6 +53,34 @@
       "terrorism",
       "environment",
       "income equality",
+      "guns"
+    ]
+  },
+  {
+    "id":           5,
+    "name":         "Person 1",
+    "age":          25,
+    "location":     "598 Broadway, New York, NY 10013",
+    "phone":        "456-123-789",
+    "lastContact":  "10/10/2017",
+    "issues":       [
+      "healthcare",
+      "immigration",
+      "terrorism",
+      "guns"
+    ]
+  },
+  {
+    "id":           6,
+    "name":         "Person 2",
+    "age":          26,
+    "location":     "598 Broadway, New York, NY 10013",
+    "phone":        "456-123-789",
+    "lastContact":  "10/10/2017",
+    "issues":       [
+      "terrorism",
+      "income equality",
+      "terrorism",
       "guns"
     ]
   }

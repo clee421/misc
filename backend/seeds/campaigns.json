@@ -4,6 +4,7 @@
     "state": "MI",
     "volunteers": [
       {
+        "id":         1,
         "firstName":  "Jane",
         "lastName":   "Doe",
         "middleName": "J",
@@ -13,7 +14,8 @@
           "immigration"
         ]
       },
-      {
+      { 
+        "id":         2,
         "firstName":  "John",
         "lastName":   "Doe",
         "middleName": "J",
@@ -21,6 +23,17 @@
         "interests":  [
           "environment",
           "guns"
+        ]
+      },
+      {
+        "id":         3,
+        "firstName":  "Alex",
+        "lastName":   "Huang",
+        "middleName": "P",
+        "dob":        "04/26/1995",
+        "interests":  [
+          "economy",
+          "terrorism"
         ]
       }
     ]
@@ -30,6 +43,7 @@
     "state": "CA",
     "volunteers": [
       {
+        "id":         3,
         "firstName":  "Alex",
         "lastName":   "Huang",
         "middleName": "P",
@@ -40,6 +54,7 @@
         ]
       },
       {
+        "id":         4,
         "firstName":  "Joanna",
         "lastName":   "Caldwell",
         "middleName": "T",
