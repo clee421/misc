@@ -51,7 +51,7 @@ class CampaignVolunteerMatch extends React.Component {
 
     // Check for volunteers
     let volunteerList = this.props.campaign.volunteers.map( v => {
-      let color = "";
+      let color = null;
       if (this.state.currentVolunteer !== null && v.id === this.state.currentVolunteer.id) {
         color = "red";
       }
