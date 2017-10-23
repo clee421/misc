@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Card, Icon } from 'semantic-ui-react';
 import Volunteer from '../volunteers/volunteer';
-import Voter from '../voters/voter';
 import merge from 'lodash/merge';
 
 ////// CONTAINER /////
@@ -51,11 +50,18 @@ class CampaignVolunteerMatch extends React.Component {
     }
 
     // Check for volunteers
-    let volunteerList = this.props.campaign.volunteers.map( v => (
-      <Volunteer
-        onClick={() => this.selectVolunteer(v)}
-        volunteer={v} key={v.id} />
-    ));
+    let volunteerList = this.props.campaign.volunteers.map( v => {
+      let color = "";
+      if (this.state.currentVolunteer !== null && v.id === this.state.currentVolunteer.id) {
+        color = "red";
+      }
+      return (
+        <Volunteer
+          color={color}
+          onClick={() => this.selectVolunteer(v)}
+          volunteer={v} key={v.id} />
+      );
+    });
     if (volunteerList.length === 0) {
       volunteerList = <p>No volunteers!.</p>;
     }
@@ -64,7 +70,7 @@ class CampaignVolunteerMatch extends React.Component {
     let voterList = this.props.voters.map( v => {
       const match = this.getMatchPercentage(this.state.currentVolunteer, v);
       return (
-        <Card>
+        <Card key={v._id}>
           <Card.Content>
             <Card.Header>
               {v.name}
