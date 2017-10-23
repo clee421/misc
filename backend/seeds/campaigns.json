@@ -11,7 +11,8 @@
         "dob":        "10/16/1998",
         "interests":  [
           "healthcare",
-          "immigration"
+          "immigration",
+          "income equality"
         ]
       },
       { 
@@ -22,6 +23,7 @@
         "dob":        "10/16/1996",
         "interests":  [
           "environment",
+          "economy",
           "guns"
         ]
       },

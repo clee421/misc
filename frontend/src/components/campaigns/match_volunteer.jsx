@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Card, Icon } from 'semantic-ui-react';
 import Volunteer from '../volunteers/volunteer';
 import Voter from '../voters/voter';
+import merge from 'lodash/merge';
 
 ////// CONTAINER /////
 import { connect } from 'react-redux';
@@ -11,6 +12,32 @@ import { fetchVoters } from '../../actions/voter_actions';
 
 
 class CampaignVolunteerMatch extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentVolunteer: null
+    };
+  }
+
+  selectVolunteer(volunteer) {
+    const currentVolunteer = merge({}, volunteer);
+    this.setState({
+      currentVolunteer
+    });
+  }
+
+  getMatchPercentage(volunteer, voter) {
+    if (volunteer === null) return 0;
+    let match = 0;
+    voter.issues.forEach( issue => {
+      if (volunteer.interests.includes(issue)) {
+        match++;
+      }
+    });
+    const total = voter.issues.length;
+    return Math.round((match / total) * 100);
+  }
 
   componentDidMount() {
     this.props.fetchCampaign(this.props.match.params.campaignId);
@@ -25,36 +52,40 @@ class CampaignVolunteerMatch extends React.Component {
 
     // Check for volunteers
     let volunteerList = this.props.campaign.volunteers.map( v => (
-      <Volunteer volunteer={v} key={v.id} />
+      <Volunteer
+        onClick={() => this.selectVolunteer(v)}
+        volunteer={v} key={v.id} />
     ));
     if (volunteerList.length === 0) {
       volunteerList = <p>No volunteers!.</p>;
     }
 
     // Check for voters
-    let voterList = this.props.voters.map( v => (
-      <Card>
-        <Card.Content>
-          <Card.Header>
-            {v.name}
-          </Card.Header>
-          <Card.Meta textAlign='left'>
-            {`Issues: ${v.issues.join(", ")}`}
-          </Card.Meta>
-          <Card.Description textAlign='left'>
-            <p>{`Age: ${v.age}`}</p>
-            <p>{`Phone: ${v.phone}`}</p>
-            <p>{`Location: ${v.location}`}</p>
-            <p>{`Last Contact: ${v.lastContact}`}</p>
-          </Card.Description>
-        </Card.Content>
-        <Card.Content>
-          <h2>{`Match: ${97}%`}</h2> 
-        </Card.Content>
-      </Card>
-    ));
+    let voterList = this.props.voters.map( v => {
+      const match = this.getMatchPercentage(this.state.currentVolunteer, v);
+      return (
+        <Card>
+          <Card.Content>
+            <Card.Header>
+              {v.name}
+            </Card.Header>
+            <Card.Meta textAlign='left'>
+              {`Issues: ${v.issues.join(", ")}`}
+            </Card.Meta>
+            <Card.Description textAlign='left'>
+              <p>{`Age: ${v.age}`}</p>
+              <p>{`Phone: ${v.phone}`}</p>
+              <p>{`Location: ${v.location}`}</p>
+              <p>{`Last Contact: ${v.lastContact}`}</p>
+            </Card.Description>
+          </Card.Content>
+          <Card.Content>
+            <h2>{`Match: ${match}%`}</h2> 
+          </Card.Content>
+        </Card>
+      );
+    });
 
-    
     return (
       <Grid container>
         <Grid.Row className="campaign">
