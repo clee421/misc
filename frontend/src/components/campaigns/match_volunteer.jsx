@@ -1,6 +1,7 @@
 import React from 'react';
-import { Grid, Card, Icon } from 'semantic-ui-react';
+import { Grid, Card, Icon, Button, Modal } from 'semantic-ui-react';
 import Volunteer from '../volunteers/volunteer';
+import VolunteerForm from '../volunteers/volunteer_form';
 import merge from 'lodash/merge';
 
 ////// CONTAINER /////
@@ -118,6 +119,15 @@ class CampaignVolunteerMatch extends React.Component {
           </Grid.Column>
           <Grid.Column width={5}>
             {volunteerList}
+            <Modal
+              closeIcon
+              closeOnRootNodeClick={false}
+              trigger={<Button><Icon name='plus' />volunteer</Button>}>
+              <Modal.Header>Enter volunteer information</Modal.Header>
+              <Modal.Content>
+                <VolunteerForm />
+              </Modal.Content>
+            </Modal>
           </Grid.Column>
           <Grid.Column width={5}>
             {voterList}
