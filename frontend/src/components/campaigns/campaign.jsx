@@ -9,7 +9,7 @@ import '../../css/campaign.css';
 class Campaign extends React.Component {
 
   render() {
-    const volunteerList = this.props.campaign.volunteers.map( v => (
+    const volunteerList = this.props.campaign.volunteers.map( (v) => (
       <Volunteer volunteer={v} key={v.id} />
     ));
 

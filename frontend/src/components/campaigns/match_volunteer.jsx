@@ -16,8 +16,17 @@ class CampaignVolunteerMatch extends React.Component {
     super(props);
 
     this.state = {
-      currentVolunteer: null
+      currentVolunteer: null,
+      showModal: false
     };
+
+    this.toggleModal = this.toggleModal.bind(this);
+  }
+
+  toggleModal() {
+    this.setState({
+      showModal: !this.state.showModal
+    });
   }
 
   selectVolunteer(volunteer) {
@@ -120,14 +129,24 @@ class CampaignVolunteerMatch extends React.Component {
           <Grid.Column width={5}>
             {volunteerList}
             <Modal
-              closeIcon
               closeOnRootNodeClick={false}
-              trigger={<Button><Icon name='plus' />volunteer</Button>}>
-              <Modal.Header>Enter volunteer information</Modal.Header>
+              open={this.state.showModal}>
+              <Modal.Header>
+                Enter volunteer information
+                <Button
+                  floated='right'
+                  onClick={this.toggleModal}
+                  icon='remove' />
+              </Modal.Header>
               <Modal.Content>
-                <VolunteerForm />
+                <VolunteerForm
+                  closeForm={this.toggleModal}
+                  campaignId={this.props.match.params.campaignId} />
               </Modal.Content>
             </Modal>
+            <Button
+              onClick={this.toggleModal}
+              ><Icon name='plus' />volunteer</Button>
           </Grid.Column>
           <Grid.Column width={5}>
             {voterList}

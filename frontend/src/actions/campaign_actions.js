@@ -31,3 +31,11 @@ export const fetchCampaign = (id) => dispatch => {
   )
   .catch( err => console.log(err));
 };
+
+export const postVolunteer = (campId, volunteer) => dispatch => {
+  return APIUtil.postVolunteer(campId, volunteer)
+  .then(
+    resp => dispatch(receiveCampaign(resp.data))
+  )
+  .catch( err => console.log(err));
+};
