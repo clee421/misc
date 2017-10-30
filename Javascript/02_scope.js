@@ -72,5 +72,65 @@ class User {
 // but its code is not yet executed. Three main things that happen in the creation phase are:
 
 // Creation of the Variable (Activation) Object,
+// 'variableObject': {
+//   // contains function arguments, inner variable and function declarations
+// }
+
 // Creation of the Scope Chain, and
+// 'scopeChain': {
+//   // contains its own variable object and other variable objects of the parent execution contexts
+// }
+
 // Setting of the value of context (this)
+// executionContextObject = {
+//   'scopeChain': {}, // contains its own variableObject and other variableObject of the parent execution contexts
+//   'variableObject': {}, // contains function arguments, inner variable and function declarations
+//   'this': valueOfThis
+// }
+
+// Code Execution Phase
+// In the second phase of the execution context, that is the code execution phase, other values are assigned and the code is finally executed.
+// A closure can not only access the variables defined in its outer function but also the arguments of the outer function.
+
+
+// Public and Private Scope
+var Module = (function() {
+  function privateMethod() {
+      // do something
+  }
+
+  return {
+      publicMethod: function() {
+          // can call privateMethod();
+      }
+  };
+})();
+
+// a more readable version
+var Module = (function () {
+  function _privateMethod() {
+      // do something
+  }
+  function publicMethod() {
+      // do something
+  }
+  return {
+      publicMethod: publicMethod,
+  }
+})();
+
+// Creating private variables in ES6
+// https://medium.com/@davidrhyswhite/private-members-in-es6-db1ccd6128a5
+
+
+// Changing Context with .call(), .apply() and .bind()
+function introduce(name, interest) {
+  console.log('Hi! I\'m '+ name +' and I like '+ interest +'.');
+  console.log('The value of this is '+ this +'.')
+}
+
+introduce('Hammad', 'Coding'); // the way you usually call it
+introduce.call(window, 'Batman', 'to save Gotham'); // pass the arguments one by one after the contextt
+introduce.apply('Hi', ['Bruce Wayne', 'businesses']); // pass the arguments in an array after the context
+
+// Call is slightly faster in performance than Apply.

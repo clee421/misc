@@ -141,6 +141,10 @@ console.log(testA === testB);
 // Reference
 // http://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3
 
+// Writing your own object equality
+// https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
+// https://stackoverflow.com/questions/1068834/object-comparison-in-javascript/1144249#1144249
+
 const modifyPerson = (person) => {
   person.age = person.age + 3;
   return person;
