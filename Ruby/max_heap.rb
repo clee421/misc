@@ -40,8 +40,7 @@ class MaxHeap
   
   private
   
-  def heapify_down
-    idx = 0
+  def heapify_down(idx = 0)
     c_one_idx, c_two_idx = get_child_idx(idx)
     
     while (c_one_idx != nil && @heap[idx] < @heap[c_one_idx]) || 
@@ -59,8 +58,7 @@ class MaxHeap
     end
   end
   
-  def heapify_up
-    idx = @heap.length - 1
+  def heapify_up(idx = @heap.length - 1)
     p_idx = get_parent_idx(idx)
     
     while p_idx != nil && @heap[idx] > @heap[p_idx]
