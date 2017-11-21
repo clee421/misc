@@ -37,11 +37,25 @@ class MaxHeap
   def size
     @heap.length
   end
+
+  def sort
+    dupe = @heap.dup
+    last_idx = @heap.length - 1
+    until last_idx <= 0
+      swap(0, last_idx)
+      last_idx -= 1
+      heapify_down(0, last_idx)
+    end
+
+    sort = @heap
+    @heap = dupe
+    sort
+  end
   
   private
   
-  def heapify_down(idx = 0)
-    c_one_idx, c_two_idx = get_child_idx(idx)
+  def heapify_down(idx = 0, last_idx = @heap.length - 1)
+    c_one_idx, c_two_idx = get_child_idx(idx, last_idx)
     
     while (c_one_idx != nil && @heap[idx] < @heap[c_one_idx]) || 
       (c_two_idx != nil && @heap[idx] < @heap[c_two_idx])
@@ -54,7 +68,7 @@ class MaxHeap
         idx = c_one_idx
       end
       
-      c_one_idx, c_two_idx = get_child_idx(idx)
+      c_one_idx, c_two_idx = get_child_idx(idx, last_idx)
     end
   end
   
@@ -74,12 +88,12 @@ class MaxHeap
     idx
   end
   
-  def get_child_idx(p_idx)
+  def get_child_idx(p_idx, last_idx)
     base = (p_idx * 2)
     a = base + 1
     b = base + 2
-    a = nil if a > @heap.length - 1
-    b = nil if b > @heap.length - 1
+    a = nil if a > last_idx
+    b = nil if b > last_idx
     [a, b]
   end
   
@@ -100,8 +114,12 @@ until max_heap.size == 0
   p max_heap.extract
   p max_heap.show_heap
 end
-
-
+p "_________________________"
+arr.each do |n|
+  max_heap.insert(n)
+end
+p max_heap.show_heap
+p max_heap.sort
 
 
 
