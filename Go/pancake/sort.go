@@ -1,16 +1,7 @@
-package main
+package pancake
 
-import "fmt"
-
-func main() {
-	arr := []int{2, 4, 5, 3, 1}
-	fmt.Println(arr)
-
-	pancakeSort(&arr)
-	fmt.Println(arr)
-}
-
-func pancakeSort(arr *[]int) {
+// Sort inefficiently sorts the array by flipping only
+func Sort(arr *[]int) {
 	for last := len(*arr) - 1; last > 0; last-- {
 		index := largestByIndex(arr, last)
 
