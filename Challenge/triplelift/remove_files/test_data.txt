@@ -1,0 +1,14 @@
+id,tactic_id,creative_library_id,creative_asset_id,active,deleted,click_tracker_url,click_tracker_encoding_level,impression_pixel_json,js_pixel_json,clickthrough_pixel_json,viewability_pixel_json,last_modified
+50980,343664,19850,56302,1,0,,0,"[""http:\/\/ec2-50-16-41-235.compute-1.amazonaws.com:8002\/support.php""]",NULL,NULL,NULL,6/27/2016 2:41
+36458,339998,16921,47064,1,0,,0,"[""https:\/\/ad.doubleclick.net\/ddm\/ad\/N2434.291508.ACCUENMEDIA.COM\/B9410050.128003387;sz=1x1;ord=[timestamp];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?""]",NULL,NULL,NULL,4/29/2016 15:37
+36453,339994,16920,47056,1,0,,0,"[""https:\/\/ad.doubleclick.net\/ddm\/ad\/N117602.288332ACCUEN\/B9707917.131546929;sz=1x1;ord=[timestamp];""]",[],[],[],4/29/2016 15:04
+36452,339993,16919,47055,1,0,,0,"[""https:\/\/ad.doubleclick.net\/ddm\/ad\/N117602.288332ACCUEN\/B9707917.131551215;sz=1x1;ord=[timestamp];""]",[],[],[],4/29/2016 15:03
+36450,339992,16918,47050,1,0,http://insight.adsrvr.org/track/clk?ttd_r=${__TTD_CLK__}&r=,0,[],[],[],[],5/24/2016 21:47
+36448,339991,16917,47049,1,0,,0,"[""https:\/\/ad.doubleclick.net\/ddm\/ad\/N117602.288332ACCUEN\/B9707917.131550922;sz=1x1;ord=[timestamp];""]",[],[],[],4/29/2016 15:01
+36447,339990,16916,47048,1,0,,0,"[""https:\/\/ad.doubleclick.net\/ddm\/ad\/N117602.288332ACCUEN\/B9707917.131550724;sz=1x1;ord=[timestamp];""]",[],[],[],4/29/2016 20:42
+36446,339989,16915,47047,1,0,,0,"[""https:\/\/ad.doubleclick.net\/ddm\/ad\/N117602.288332ACCUEN\/B9707917.131549290;sz=1x1;ord=[timestamp];""]",[],[],[],4/29/2016 14:59
+36444,339988,16914,47046,1,0,,0,"[""https:\/\/ad.doubleclick.net\/ddm\/ad\/N117602.288332ACCUEN\/B9707917.131545668;sz=1x1;ord=[timestamp];""]",[],[],[],4/29/2016 14:58
+36443,339987,16913,47041,1,0,,0,[],[],[],[],4/29/2016 14:57
+23905,336385,13190,34099,1,0,https://ad.atdmt.com/c/go;p=11142202536676;a=11142202567402;ev.a=1;idfa=;idfa_lat=;aaid=;aaid_lat=;cache=?href=,0,"[""https:\/\/ad.atdmt.com\/i\/img;p=11142202536676;a=11142202567402;idfa=;idfa_lat=;aaid=;aaid_lat=;cache=""]",[],[],[],3/14/16 23:13
+14353,328277,7230,14321,1,0,https://clicks.eyereturn.com/redir.aspx?tokenID=1137335&cn=0&rtu=,0,"[""https:\/\/voken.eyereturn.com\/pix?1132530""]",NULL,NULL,NULL,2/1/16 19:01
+32562,339051,16071,44198,0,0,http://insight.adsrvr.org/track/clk?ttd_r=${__TTD_CLK__}&r=,0,"[""https:\/\/t.mookie1.com\/t\/v1\/imp?migAgencyId=616&migSource=adsrv2&migRandom=[timestamp]&migTrackDataExt=3523435;130409495;303707848;0&migTrackFmtExt=client;io;ad;crtv&migUnencodedDest=https:\/\/ad.doubleclick.net\/ddm\/ad\/N4406.1308838.XAXIS.COM\/B9574157.130409495;sz=1x1;ord=[timestamp];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?""]",[],[],"[""https:\/\/cdn.doubleverify.com\/dvtp_src.js?ctx=1362594&cmp=9574157&sid=1416456&plc=130409495&num=&adid=&advid=892261&adsrv=1&region=30&btreg=INSERT_BTREG&btadsrv=INSERT_BTADSRV&crt=&crtname=&chnl=&unit=&pid=&uid=&tagtype=&dvtagver=6.1.src""]",4/15/16 22:17
