@@ -1,0 +1,91 @@
+*Instructions for seeding DB*
+https://github.com/toymachiner62/node-mongo-seeds
+
+________________________
+
+Hi! I’m Karen and I’m running for office in the great state of MI.
+
+State: MI
+
+Candidate: (User?)
+  Name: Karen,
+  State: MI
+
+I’d really like your help. 
+I need a way to have my volunteers sign up to help me out. 
+In particular I need them to be able to give me their first name, last name, middle initial, and date of birth. 
+I also need to know what they are interested in.
+
+Volunteers:
+  First Name,
+  Last Name,
+  Middle Initial,
+  Date of Birth,
+  Interests
+
+ Then I need to match them with the voter data that I have. 
+ The format of the voter data will be name, age, location, phone number, and date last contacted.
+ 
+ Voter:
+  Name,
+  Age,
+  Location,
+  Phone Number,
+  Date (last contacted)
+ 
+ Can you help me with that?
+
+ ______
+
+So a Campaign has a person running for office, and the state the campaign is in. A campaign can be multi-state too.
+
+ORM Style
+A Candidate belongs to a Campaign
+A Volunteer belongs to a Campaign
+
+A Voter has no relationship
+
+NoSQL Style
+Campaign Collection
+{
+  _id: {
+    Candidate: String,
+    State: String,
+    Volunteers: [
+      {
+        firstName:  "Jane",
+        lastname:   "Doe",
+        middleName: "J",
+        DOB:        "10/16/1998",
+        Interests:  "Slow walks on the beach"
+
+      },
+      {
+        firstName:  "John",
+        lastname:   "Doe",
+        middleName: "J",
+        DOB:        "10/16/1996",
+        Interests:  "Watching scary movies"
+
+      }
+    ]
+  }
+}
+
+Voter Collection
+{
+  _id: {
+    name:         "Steve Johnson",
+    age:          23,
+    location:     "159 West 25th Street, New York, NY 10025",
+    phone:        "123-456-789",
+    lastContact:  "10/16/2017"
+  },
+  _id: {
+    name:         "Stephanie Johnson",
+    age:          27,
+    location:     "598 Broadway, New York, NY 10013",
+    phone:        "456-123-789",
+    lastContact:  "10/10/2017"
+  }
+}
