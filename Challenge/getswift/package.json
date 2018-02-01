@@ -1,0 +1,23 @@
+{
+  "name": "GS.CodeTest",
+  "version": "1.0.0",
+  "description": "Code Test",
+  "main": "test_api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aAclee/GS.CodeTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aAclee/GS.CodeTest/issues"
+  },
+  "homepage": "https://github.com/aAclee/GS.CodeTest#readme",
+  "dependencies": {
+    "axios": "^0.16.2"
+  }
+}
