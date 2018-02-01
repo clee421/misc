@@ -1,0 +1,73 @@
+/* Place your CSS for the exam in this file. You can also change the filename
+ extension to .scss if you want to use Sass. If sass doesn't appear to be
+ working, try running npm start again. */
+
+ /*
+ Blue: #609ACB    // Confirm & Horizontal Rules
+ Red: #D71E00     // Remove Button
+ Gray: #AAAAAA    // Cancel Button
+ Black: #333333   // Text
+ */
+
+ /* 
+ Nope, didn't work, no time to find out why
+ :root {
+  --red: #D71E00 ;
+  --blue: #609ACB;
+  --gray: #AAAAAA;
+  --black: #333333;
+} */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main-event-wrapper {
+  background-color: #609ACB;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-event {
+  min-height: 250px;
+  width: 600px;
+  background-color: white;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #609ACB;
+}
+
+.main-body {
+  display: flex;  
+}
+
+.edit-wrapper {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: #AAAAAA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hide {
+  display: none;
+}
+
+.edit-main {
+  min-height: 250px;
+  width: 600px;
+  background-color: white;
+}
+
+.edit-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #609ACB;
+}
