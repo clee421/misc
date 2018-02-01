@@ -1,0 +1,16 @@
+#  -- Notes --
+# Considering a benchmark was asked, I assume that time to process data
+# is important and thus added additional data structure to speed up
+# process time.
+#
+# Using a SQL database was considered, but the data could have been
+# from an API endpoint and that felt a bit pointless without further
+# information
+#
+# The data_map should be another class of it's own used to generate
+# reports but it also may be a potential state of the front end (with
+# modification).
+#
+# With report generation being the goal, data_map essentially the report
+# and thus if new data was added to the CampaignCollection another
+# data_map would need to be called

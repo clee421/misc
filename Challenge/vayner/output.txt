@@ -1,0 +1,28 @@
+# TERMINAL OUTPUT
+# ~/Projects/VaynerMedia$ ruby VM_instructions.rb
+#
+# What was the total spent against people with purple hair?
+# Answer: 566512
+# __________________________________________________________
+# How many campaigns spent on more than 4 days?
+# Answer: 133
+# __________________________________________________________
+# How many times did source H report on clicks?
+# Answer: 623
+# __________________________________________________________
+# Which sources reported more "junk" than "noise"?
+# Answer: D, J, F
+# __________________________________________________________
+# What was the total cost per view for all video ads, truncated to two decimal places?
+# Answer: 16.49
+# __________________________________________________________
+# How many source B conversions were there for campaigns targeting NY?
+# Answer: 268
+# __________________________________________________________
+# What combination of state and hair color had the best CPM?
+# Answer: NY blue
+#
+# Time to load files: 0.232156058
+# Time to map files: 0.142976948
+# Time to answer questions: 0.004872637
+# Total time: 0.380005643
