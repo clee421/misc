@@ -1,0 +1,16 @@
+Part B
+
+Looking through the data in SolutionsData-copy.ods, under tab tl_tactic, you can see that politicalwire.com is missing from the client data. This data is acquired from the SolutionsData.xlsx and mapping a count of each of the domains. The external parties would be Thomas who first asked to look into this problem. With the internal party being the engineering team working with the politcalwire.com domain or the solutions engineering team to keep note that such an issue has occured. Both parties would be informed that the 442 missing entries from the client data log accounts for the 4.45% difference between TripleLift's logs and the clients.
+
+
+Part C
+
+https://politicalwire.com/?tripleliftTest=true&tl_tactic_id=343664 indicates that the ad is not showing. The request url shows and error which means that the request url is not working. 
+
+http://makersalley.com/search/?tripleliftTest=true&tl_tactic_id=343664 indicates that the links are working though so that this is a problem with only politicalwire.com. 
+
+This looks to be a problem with the js tag on politicalwire.com. I would work with the engineering team in charge of politicalwire.com to fix this problem.
+
+
+Part D
+See https://github.com/aAclee/Solutions.Challenge for script and installation

@@ -1,0 +1,20 @@
+{
+  "name": "TripleLift",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test_tactic_imp_pixel.js",
+  "scripts": {
+    "test": "mocha tests --recursive --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csvtojson": "^1.1.7",
+    "fetch-timeout": "0.0.2",
+    "node-fetch": "^1.7.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2"
+  }
+}
