@@ -1,3 +1,8 @@
+const RIGHT = "RIGHT";
+const LEFT = "LEFT";
+const UP = "UP";
+const DOWN = "DOWN";
+
 class Position {
   constructor(pos, width, height) {
     this.row = pos[0];
@@ -8,10 +13,13 @@ class Position {
       right: width - 1,
       bottom: height - 1
     };
+
+    this.history = [];
+    this.output = true;
   }
 
   start() {
-    console.log("Starting!");
+    if (this.output) console.log("Starting!");
     this.showPosition();
   }
 
@@ -21,13 +29,42 @@ class Position {
   }
 
   showPosition() {
-    console.log(`${this.row}-${this.col}`);
+    const pos = `${this.row}-${this.col}`;
+    this.history.push(pos);
+    if (this.output) console.log(pos);
+  }
+
+  displayInfo(direction) {
+    if (!this.output) return;
+
+    switch(direction) {
+      case LEFT:
+        console.log("Going left!");
+        break;
+      case RIGHT:
+        console.log("Going right!");
+        break;
+      case UP:
+        console.log("Going up!");
+        break;
+      case DOWN:
+        console.log("Going down!");
+        break;
+    }
+  }
+
+  turnOffOutput() {
+    this.output = false;
+  }
+
+  turnOnOutput() {
+    this.output = true;
   }
 
   goRight(){
     if(!this.haveSpace()) return;
 
-    console.log("Going right!");
+    this.displayInfo(RIGHT);
     while(this.col + 1 <= this.bounds.right) {
       this.col++;
       this.showPosition();
@@ -39,7 +76,7 @@ class Position {
   goDown(){
     if(!this.haveSpace()) return;
 
-    console.log("Going down!");
+    this.displayInfo(DOWN);
     while(this.row + 1 <= this.bounds.bottom) {
       this.row++;
       this.showPosition();
@@ -51,7 +88,7 @@ class Position {
   goLeft(){
     if(!this.haveSpace()) return;
 
-    console.log("Going left!");
+    this.displayInfo(LEFT);
     while(this.col - 1 >= this.bounds.left) {
       this.col--;
       this.showPosition();
@@ -63,7 +100,7 @@ class Position {
   goUp(){
     if(!this.haveSpace()) return;
 
-    console.log("Going up!");
+    this.displayInfo(UP);
     while(this.row - 1 >= this.bounds.top) {
       this.row--;
       this.showPosition();

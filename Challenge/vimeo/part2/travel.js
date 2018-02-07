@@ -1,7 +1,8 @@
 const Position = require('./position');
 
-const travelClockwise = (width, height) => {
+const travelClockwise = (width, height, output = true) => {
   const pos = new Position([0,0], width, height);
+  if (!output) pos.turnOffOutput();
 
   pos.start();
 
@@ -12,6 +13,7 @@ const travelClockwise = (width, height) => {
     pos.goUp();
   }
   
+  return pos.history;
 };
 
 module.exports.travelClockwise = travelClockwise;
