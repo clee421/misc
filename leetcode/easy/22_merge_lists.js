@@ -39,8 +39,13 @@ var mergeTwoLists = function(l1, l2) {
   }
   
   while (leftOver !== null) {
-      current.next = new ListNode(leftOver.val)
-      current = current.next
+      if (head === null) {
+          head = new ListNode(leftOver.val)
+          current = head
+      } else {
+          current.next = new ListNode(leftOver.val)
+          current = current.next
+      }
       leftOver = leftOver.next
   }
   
