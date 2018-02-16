@@ -100,15 +100,6 @@ const render = (width, height) => {
   }
 }
 
-const inst = []
-const getInstructions = pos => {
-  inst.push(pos)
-}
-
-const width = 4
-const height = 4
-const renderBoard = render(width, height)
-
 const displayBoard = inst => {
   let board = Array(height).fill(null)
   board = board.map( el => Array(width).fill(null) )
@@ -138,7 +129,16 @@ const displayBoard = inst => {
       let str = rowArr.join(" ")
       console.log(str)
     })
-  }, 125)
+  }, 75)
+}
+
+const width = 60
+const height = 15
+const renderBoard = render(width, height)
+
+const inst = []
+const getInstructions = pos => {
+  inst.push(pos)
 }
 
 travelZigZag([0, 0], width, height, getInstructions)
