@@ -100,8 +100,46 @@ const render = (width, height) => {
   }
 }
 
-const width = 10
-const height = 10
+const inst = []
+const getInstructions = pos => {
+  inst.push(pos)
+}
+
+const width = 4
+const height = 4
 const renderBoard = render(width, height)
 
-travelZigZag([0, 0], width, height, renderBoard)
+const displayBoard = inst => {
+  let board = Array(height).fill(null)
+  board = board.map( el => Array(width).fill(null) )
+
+  let i = 0
+  let interval = setInterval(() => {
+    if (i >= inst.length) {
+      clearInterval(interval)
+      return
+    }
+
+    pos = inst[i]
+    console.log(pos)
+    let r = pos[0]
+    let c = pos[1]
+    board[r][c] = "X"
+
+    i++
+
+    console.reset()
+    board.forEach( row => {
+      let rowArr = []
+      row.forEach( p => {
+        if (p === null) rowArr.push("_")
+        if (p !== null) rowArr.push(p)
+      })
+      let str = rowArr.join(" ")
+      console.log(str)
+    })
+  }, 125)
+}
+
+travelZigZag([0, 0], width, height, getInstructions)
+displayBoard(inst)
