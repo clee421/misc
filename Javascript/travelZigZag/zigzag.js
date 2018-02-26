@@ -112,7 +112,6 @@ const displayBoard = inst => {
     }
 
     pos = inst[i]
-    console.log(pos)
     let r = pos[0]
     let c = pos[1]
     board[r][c] = "X"
