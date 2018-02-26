@@ -1,0 +1,57 @@
+n = invalid password list length
+m = input password list length
+
+
+Method #1
+A general idea for designing this password filter is to
+load all the invalid passwords into memory and then sort
+them. Then we can use BSearch to check check the input
+passwords and compare them.
+
+Time
+Sorting:   O(nlogn)
+Searching: O(mlogn)
+
+Space
+Common passwords: O(n)
+
+Method #2
+Another method would be to not sort the invalid password list
+and just search for the input passwords in the invalid list
+but this can be very slow if n == m
+
+Time
+Searching: O(n * m)
+
+Space
+Common passwords: O(n)
+
+Method #3
+A third method would be to load all the common passwords and
+input passwords into memory and then sorting both. With this
+method we can then search for invalid passwords at a faster
+speed potentially.
+
+Time
+Sorting:   O(nlogn) + O(mlogm)
+Searching: O(n + m)
+
+Space
+Common passwords: O(n)
+Input passwords: O(m)
+
+
+* The problem with these methods is that if the invalid
+password list (or input passwords list) does not fit into memory (sounds unlikely)
+but then we would need to store them into a database or
+break the 1 large file into smaller files and run the
+comparison to each file
+
+
+Considerations
+Is the invalid list case sensitive?
+password == Password == PassWord == pASSwORD ?
+
+Since passwords are case sensitive I will leave it as so
+but if there was a need to check, it should be a simple
+downcase to all passwords that are invalid and to be checked
