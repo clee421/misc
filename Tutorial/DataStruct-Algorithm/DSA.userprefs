@@ -1,0 +1,13 @@
+﻿<Properties StartupItem="DSA/DSA.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DSA/Program.cs">
+    <Files>
+      <File FileName="DSA/Program.cs" Line="8" Column="4" />
+      <File FileName="DSA/LinkedList.cs" Line="147" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

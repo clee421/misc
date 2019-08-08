@@ -1,0 +1,5 @@
+/home/kibs/Projects/DSA/DSA/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/kibs/Projects/DSA/DSA/bin/Debug/DSA.exe.mdb
+/home/kibs/Projects/DSA/DSA/bin/Debug/DSA.exe
+/home/kibs/Projects/DSA/DSA/obj/x86/Debug/DSA.exe
+/home/kibs/Projects/DSA/DSA/obj/x86/Debug/DSA.exe.mdb
