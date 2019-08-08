@@ -1,0 +1,45 @@
+@import "./assets/scss/colors.scss";
+
+$max-width: 400px;
+
+.location-selector-container {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  .input-boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: $max-width;
+
+    span {
+      color: $black;
+    }
+
+    input {
+      height: 30px;
+      width: 100%;
+
+      margin-bottom: 5px;
+      padding-left: 5px;
+
+      border-radius: 5px;
+    }
+  }
+
+  .submit-container {
+    height: 30px;
+    width: $max-width;
+    margin: 10px 0;
+
+    button {
+      height: 100%;
+      width: 100%;
+
+      border-radius: 5px;
+    }
+  }
+}

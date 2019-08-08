@@ -1,0 +1,12 @@
+@import "./assets/scss/fonts.scss";
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 200px;
+  width: 100%;
+
+  @extend %title;
+}

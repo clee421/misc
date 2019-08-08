@@ -1,0 +1,23 @@
+.weather-graph-container {
+  height: 100%;
+
+  .no-weather-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 400px;
+    width: 400px;
+
+    border: 1px solid black;
+
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  .recharts-wrapper {
+    .recharts-legend-wrapper {
+      bottom: -10px !important; // Prefer not to do this but it's fine till investigation
+    }
+  }
+}
