@@ -1,0 +1,27 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+  psql_ship:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: ship_db
+      POSTGRES_USER: nl_ship_psql
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    volumes:
+      - ./docker/data/postgresql/ship:/var/lib/postgresql
+
+  psql_ship_test:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: ship_db_test
+      POSTGRES_USER: nl_ship_psql_test
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5433:5432
+    volumes:
+      - ./docker/data/postgresql/ship_test:/var/lib/postgresql

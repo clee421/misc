@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "36b00238-9c40-4066-871c-9444690f508a",
+		"name": "nl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/total_distance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/total_distance?start=1561536001&end=1561760001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"total_distance"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "1561536001"
+						},
+						{
+							"key": "end",
+							"value": "1561760001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/total_fuel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/total_fuel?start=1561536001&end=1561770002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"total_fuel"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "1561536001"
+						},
+						{
+							"key": "end",
+							"value": "1561770002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/efficiency",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/efficiency?start=1561536001&end=1561770003",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"efficiency"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "1561536001"
+						},
+						{
+							"key": "end",
+							"value": "1561770003"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
