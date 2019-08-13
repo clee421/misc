@@ -1,14 +1,13 @@
 package csv
 
 import (
-	"fmt"
 	"nl/business"
 	"nl/util"
 	"sort"
 	"strconv"
 )
 
-// NewShipRepository creates a ship repository for data fetching
+// NewShipRepository creates a new ship repository
 func NewShipRepository(filename string) (*ShipRepository, error) {
 	sd, err := ParseCsvToShipData(filename)
 	if err != nil {
@@ -74,7 +73,6 @@ func ParseCsvToShipData(filename string) ([]business.ShipData, error) {
 		}
 
 		if !sorted {
-			fmt.Println("Sorting has happened")
 			sort.Slice(sd, func(i int, j int) bool {
 				return sd[i].Timestamp < sd[j].Timestamp
 			})

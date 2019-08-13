@@ -2,7 +2,7 @@ package csv
 
 import "nl/business"
 
-// ShipRepository holds a list of ship data
+// ShipRepository wraps a list of ship data
 type ShipRepository struct {
 	data []business.ShipData
 }
