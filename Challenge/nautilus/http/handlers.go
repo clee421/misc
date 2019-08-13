@@ -8,12 +8,6 @@ import (
 	"strconv"
 )
 
-/**
- * Design Decision
- * The response types could have been anonymous structs but a well defined
- * response scales more cleanly and makes it easier to refactor
- */
-
 type totalDistanceResponse struct {
 	TotalDistance float64 `json:"total_distance"`
 }

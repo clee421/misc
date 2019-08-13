@@ -1,13 +1,5 @@
 package ship
 
-/**
- * Design Decision
- * The service layer looks quite unnecessary but as a code base scales
- * with data coming in from multiple repositories it is cleaner
- * to have a layer where data management and calculations are abstracted
- * from the handler
- */
-
 // Repository denotes the interface the ship service interacts with
 type Repository interface {
 	TotalDistance(int, int) float64

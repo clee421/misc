@@ -13,11 +13,6 @@ import (
 	_ "github.com/lib/pq"
 )
 
-/**
- * Design Decision
- * 3rd party libraries were not installed into the project for ease of running the server.
- */
-
 type repository struct {
 	ship ship.Repository
 }

@@ -1,11 +1,6 @@
 package business
 
-/**
- * Design Decision
- * The purpose of the package business is to consolidate the business logic
- */
-
-// ShipData represents the data of a ship at snapshot of time
+// ShipData represents the info of a ship at snapshot of time
 type ShipData struct {
 	// Timestamp is unix epoch time (seconds since 00:00:00 January 1 1970)
 	Timestamp int
@@ -64,11 +59,8 @@ func (a ShipData) Efficiency(b ShipData) float64 {
 	miles := a.DistanceTravelled(b)
 	gallons := a.FuelConsumed(b)
 
-	// This feels very hacky but I am on the assumption that fuel rate can be
-	// 0 since the ship can be cruising. If that is not the case then this can
-	// be removed and the fix would go into csv.go during time of backfilling data
 	if !(gallons > 0) {
-		gallons = 1
+		return miles
 	}
 
 	return miles / gallons

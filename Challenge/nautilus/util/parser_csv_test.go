@@ -7,13 +7,6 @@ import (
 	"testing"
 )
 
-/**
- * Design Decisions
- * Using reflect.DeepEqual is not preferable but for this take home I would like to
- * not use 3rd Party Libraries to remove build complications potentially.
- * https://github.com/google/go-cmp would be a great library to use or a more
- * comprehensive testing suite like https://onsi.github.io/ginkgo/
- */
 func TestParseCSV(t *testing.T) {
 	expected := [][]string{
 		{"0", "col1", "col2", "col3"},

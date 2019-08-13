@@ -1,12 +1,5 @@
 package csv
 
-/**
- * Design Decision
- * I would prefer to follow the usual standard of package csv_test but I felt that
- * creating a ShipRepository with NewShipRepository is not testing each portion correctly.
- * Testing ship.go should not depend potenntially on csv.go if possible
- */
-
 import (
 	"math"
 	"nl/business"
@@ -59,13 +52,6 @@ var sr = ShipRepository{
 		{Timestamp: startTime + (4 * hourInSecods), Speed: 10.0, Fuel: 0.75},
 	},
 }
-
-/**
- * Design Decision
- * Should look into TestMain for setting up code before tests are run
- * The testing data is not representative of an actual data but designed for ease
- * of calculations for correctness
- */
 
 func TestTotalDistance(t *testing.T) {
 	tests := append([]testFormat{

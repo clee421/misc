@@ -25,13 +25,6 @@ func (mr *mockRepository) Efficiency(a int, b int) float64 {
 	return expectedEfficiency
 }
 
-/**
- * Design Decisions
- * The tests here are quite simple because the service layer currently
- * handles no calculations. It only passes the data through from the
- * repository so it the current tests are fine. Once more logic is
- * handled then there should be a switch to table driven tests.
- */
 func TestNewService(t *testing.T) {
 	var result float64
 

@@ -17,12 +17,6 @@ var config = postgres.Config{
 	DBname:   "ship_db_test",
 }
 
-/**
- * Design Decision
- * There shouldn't be a need to test 3rd party libraries so based one what the
- * code does as long as the return isn't an error then everything looks good
- */
-
 func TestNewShipRepository(t *testing.T) {
 	// Dummy sql connection
 	conn := &sql.DB{}

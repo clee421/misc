@@ -55,20 +55,14 @@ func (r *ShipRepository) Efficiency(start int, end int) float64 {
 }
 
 /**
- * Design Decision
- * The data is kept in sorted order by timestamp so that a binary search can be run
- * on the data. findIndexRangeByTimestamp will find the starting index and ending
- * index within the timestamp range.
- *
- * Q: What happens if start is after last timestamp? Is it an error?
- *
- * TODO
- * The binary search for start and end look very similar. Possibly refactor?
+ * Parameters
+ * @start - timestamp is unix epoch time (seconds since 00:00:00 January 1 1970)
+ * @end - timestamp is unix epoch time (seconds since 00:00:00 January 1 1970)
  *
  * Returns
  * starting_index int
  * ending_index int
- * -1, -1 is returned if there is no data
+ * -1, -1 is returned if the range is not found
  */
 func (r *ShipRepository) findIndexRangeByTimestamp(start int, end int) (int, int) {
 	if len(r.data) < 1 {
@@ -76,7 +70,7 @@ func (r *ShipRepository) findIndexRangeByTimestamp(start int, end int) (int, int
 	}
 
 	s, e := r.binarySearchStartIndex(start), r.binarySearchEndIndex(end)
-	if s == -1 || e == -1 {
+	if s == -1 || e == -1 || e < s {
 		return -1, -1
 	}
 

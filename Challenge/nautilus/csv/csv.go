@@ -73,12 +73,6 @@ func ParseCsvToShipData(filename string) ([]business.ShipData, error) {
 			}
 		}
 
-		/**
-		 * Design Decision
-		 * In order for the binary search to work the generated data has to be sorted. I don't believe
-		 * that sorting will be required since the data should be in chronological order but a bit of
-		 * defence here isn't harmful
-		 */
 		if !sorted {
 			fmt.Println("Sorting has happened")
 			sort.Slice(sd, func(i int, j int) bool {
@@ -93,16 +87,6 @@ func ParseCsvToShipData(filename string) ([]business.ShipData, error) {
 		return nil, err
 	}
 
-	/**
-	 * Design Decision
-	 * The code here is a bit careless as it assumes that you won't be indexing into an array
-	 * smaller than size 2. Technically the backfill will be called if we start appending
-	 * again with new values but there's not enough information.
-	 *
-	 * Considerations
-	 * Can fuel consumption be zero? I can imagine that it is possible so it has been left in
-	 * Can speed be zero? It doesn't look to be possible unless the ship is at dock
-	 */
 	if sd[len(sd)-1].Speed == -1 {
 		sd[len(sd)-1].Speed = sd[len(sd)-2].Speed
 	}
@@ -113,13 +97,6 @@ func ParseCsvToShipData(filename string) ([]business.ShipData, error) {
 
 	return sd, nil
 }
-
-/**
- * Design Decision
- * backfillSpeed & backfillFuel are both very similar code used for backfilling values
- * It's been left here as WET code because it should be an easy refactor and private
- * functions are not tested
- */
 
 func backfillSpeed(sd []business.ShipData) {
 	lastValue := sd[len(sd)-1].Speed

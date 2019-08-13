@@ -11,13 +11,6 @@ import (
 	_ "github.com/lib/pq"
 )
 
-/**
- * Design Decision
- * Database setup should defnitely be done by migrations in production,
- * I would use https://github.com/golang-migrate/migrate for managing
- * migrations.
- */
-
 func main() {
 	var psqlFlag = flag.Bool("postgres", false, "initialize postgres database")
 	flag.Parse()

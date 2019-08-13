@@ -18,12 +18,6 @@ const (
 	roundPrecision = 100000
 )
 
-/**
- * Design Decision
- * Other tests in the app are unit tests and thus certain sections need to be mocked.
- * The server test will test the service as a whole. Note the logger is not required
- * so a buffer is passed in but never used.
- */
 func TestServer(t *testing.T) {
 	shipRepository, err := csv.NewShipRepository("./test_data/test.csv")
 	if err != nil {
