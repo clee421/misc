@@ -1,9 +1,3 @@
-# Overview
-
-As a software engineer at Nautilus Labs, you must be able to work well with time-series data. The Nautilus Platform receives over 100 values every ten minutes from every ship that we are optimizing. Every feature of our platform needs to retrieve, transform, store, analyze, and respond to queries about that data.
-
-In this take-home assignment, we would like you to build a fully functioning, mini-version, of Nautilus Platform. Specifically, we want you to build an API server that will load a CSV file of ship data, process it, store it, and then listen and respond to queries about that data.
-
 # Installation
 
 ## Requirements
